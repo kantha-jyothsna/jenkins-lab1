@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "git change"
+echo "manual change"
