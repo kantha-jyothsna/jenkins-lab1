@@ -1,0 +1,34 @@
+pipeline {
+
+    agent any
+
+    environment {
+        APP_NAME = "GitPractice1"
+        DEPLOY_ENV = "Development"
+    }
+
+    stages {
+
+        stage('Environment Demo') {
+
+            steps {
+
+                echo "Application : ${env.APP_NAME}"
+                echo "Environment : ${env.DEPLOY_ENV}"
+                echo "Job Name : ${env.JOB_NAME}"
+                echo "Build Number : ${env.BUILD_NUMBER}"
+
+                sh '''
+                echo "Application : $APP_NAME"
+                echo "Environment : $DEPLOY_ENV"
+                echo "Job Name : $JOB_NAME"
+                echo "Build Number : $BUILD_NUMBER"
+                echo "Workspace : $WORKSPACE"
+                '''
+            }
+
+        }
+
+    }
+
+}
