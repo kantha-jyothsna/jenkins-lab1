@@ -1,0 +1,11 @@
+withCredentials([
+    usernamePassword(
+        credentialsId: 'demo-creds',
+        usernameVariable: 'USER',
+        passwordVariable: 'PASS'
+    )
+]) {
+    sh '''
+    echo $USER
+    '''
+}
